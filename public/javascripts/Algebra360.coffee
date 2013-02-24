@@ -3,7 +3,12 @@ class Algebra360 extends AbstractAlgebra
 ### -180 : 180 ###
 
   toNumber : () ->
-    @val % 180
+    if @val > 180
+      return -180 + @val%180
+    else if @val < -180
+      return 180 + @val%180
+    else
+      @val
 
   ###
   * @return { Algebra360 }
