@@ -1,0 +1,12 @@
+extends layout
+
+block needleScript
+    // тут подключаем скрипт для тестирования
+    script(src='/javascripts/tests/testForBrowse.js')
+
+block content
+    h1
+       | Эта страница демонстрирует результаты тестирования класса Algebra360
+    div#mocha
+
+
