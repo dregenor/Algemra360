@@ -1,7 +1,5 @@
 class Algebra360 extends AbstractAlgebra
 
-### -180 : 180 ###
-
   toNumber : () ->
     if @val > 180
       return -180 + @val%180
@@ -10,13 +8,13 @@ class Algebra360 extends AbstractAlgebra
     else
       @val
 
-  ###
+  ###*
   * @return { Algebra360 }
   ###
   sub : ( val ) ->
     @new( @val - val )
 
-  ###
+  ###*
   * вычисляем все углы между текущим и переданным ( от текущего к введоному )
   * @return {{ a:number; b:number }}
   ###
@@ -26,15 +24,7 @@ class Algebra360 extends AbstractAlgebra
     alfa = b - a
     beta = 360 + alfa
     beta = beta % 360 - 360 if beta > 360
-    [alfa,beta]
+    {a:alfa,b:beta}
 
-  ###
-  * @return { Algebra360 }
-  ###
   add:( val ) ->
     @new( @val + val )
-
-  ###
-  * Это минимально достаточное определение класса
-  * Для полноты счастья нужно определить операторы mul div и операторы сравнения
-  ###
